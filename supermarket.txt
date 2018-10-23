@@ -1,0 +1,4 @@
+http://127.0.0.1:8080/Supermarket/analysis/lookupprice?goodsCode={"pId":"123456"}
+
+http://127.0.0.1:8080/Supermarket/analysis/palceoreder
+checkout  {"total":"1","record":[{"pNum":1,"pId":"123456"}],"oSum":3}
