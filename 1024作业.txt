@@ -1,0 +1,15 @@
+
+作业：结合testng注解
+
+1、实现 login1,login2,login3，注意代码的封装，达到可复用
+2、httpClient共用一个，post1 登录（cookie），post2 实现添加地址 
+
+miniblog 登录
+List<NameValuePair> pairs = new ArrayList<NameValuePair>();  
+NameValuePair pair1 = new BasicNameValuePair("username", "lihuanzhen");  
+NameValuePair pair2 = new BasicNameValuePair("password", "123456");  
+pairs.add(pair1);  
+pairs.add(pair2);
+UrlEncodedFormEntity entity1 = new UrlEncodedFormEntity(pairs,"UTF-8");
+post.setEntity(entity1);
+
