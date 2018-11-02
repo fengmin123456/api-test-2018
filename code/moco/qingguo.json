@@ -1,0 +1,40 @@
+[
+	{
+		"description": "moco login",
+		"request": {
+			"uri": "/common/fgadmin/login1",
+			"method": "post",
+			"headers":{"content-type":"application/json"},
+			"json": {
+				"phoneArea": "86",
+				"phoneNumber": "20000000000",
+				"password": "netease123"
+			}
+		},
+		"response": {
+			"json": {
+				"message": "success",
+				"code": "200"
+			}
+		}
+	},
+	{
+		"description": "moco login",
+		"request": {
+			"uri": "/common/fgadmin/login2",
+			"method": "post",
+			"headers":{"content-type":"application/json"},
+			"json": {
+				"phoneArea": "86",
+				"phoneNumber": "2000000000",
+				"password": "netease123"
+			}
+		},
+		"response": {
+			"json": {
+				"message":"´íÎó",
+				"code":"400"
+			}
+		}
+	}
+]

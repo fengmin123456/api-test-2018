@@ -1,0 +1,107 @@
+[
+	{
+		"description": "post demo1",
+		"request": {
+			"uri": "/postdemo1",
+			"method": "post"
+		},
+		"response": {
+			"text": "post example1"
+		}
+	},
+	{
+		"description": "post demo1",
+		"request": {
+			"uri": "/postdemo2",
+			"method": "post",
+			"forms": {
+				"id": "1"
+			}
+		},
+		"response": {
+			"text": "post example2"
+		}
+	},
+	{
+		"description": "post demo3",
+		"request": {
+			"uri": "/postdemo3",
+			"method": "post",
+			"json": {
+				"id": "1",
+				"name": "tom"
+			}
+		},
+		"response": {
+			"json": {
+				"id": "11",
+				"name": "tom1"
+			}
+		}
+	},
+	{
+		"description": "post demo4 for cookie",
+		"request": {
+			"uri": "/postdemo4",
+			"method": "post",
+			"json": {
+				"id": "1",
+				"name": "tom"
+			},
+			"cookies": {
+				"mindsparktb": "true",
+				"mindsparktbsupport": "true"
+			}
+		},
+		"response": {
+			"json": {
+				"id": "11",
+				"name": "tom1",
+				"login": "true"
+			}
+		}
+	},
+	{
+		"description": "post demo5 for headers",
+		"request": {
+			"uri": "/postdemo5",
+			"method": "post",
+			"headers":{"content-type":"application/json"},
+			"json": {
+				"id": "1",
+				"name": "tom"
+			}
+		
+		},
+		"response": {
+			"json": {
+				"id": "11",
+				"name": "tom1",
+				"login": "content-type"
+			}
+		}
+	},
+	{
+		"description": "post demo6 for redirectorTo",
+		"request": {
+			"uri": "/postdemo6",
+			"method": "post",
+					"json": {
+				"id": "1",
+				"name": "tom"
+			}
+		
+		},
+		"redirectTo":"/getdemo1"
+
+	},
+		{
+		"description": "第一个MOCO",
+		"request": {
+			"uri": "/getdemo1"
+		},
+		"response": {
+			"text": "redirect content"
+		}
+	}
+]

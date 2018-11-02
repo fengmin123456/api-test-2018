@@ -1,0 +1,35 @@
+[
+	{
+		"description": "第一个MOCO",
+		"request": {
+			"uri": "/getdemo1"
+		},
+		"response": {
+			"text": "响应内容"
+		}
+	},
+	{
+		"description": "第二个MOCO",
+		"request": {
+			"uri": "/getdemo2",
+			"method": "get"
+		},
+		"response": {
+			"text": "响应内容getdemo2"
+		}
+	},
+	{
+		"description": "第三个MOCO",
+		"request": {
+			"uri": "/getdemo3",
+			"method": "get",
+			"queries": {
+				"id": "1",
+				"title":"baidu"
+				}
+		},
+		"response": {
+			"text": "响应内容getdemo3,id=1,title=baidu"
+		}
+	}
+]
