@@ -1,0 +1,57 @@
+一：博客列表：把表中的信息输出到页面上
+1、从指定的表中读取数据，传给页面 views.py
+  def  getbloglist(request):
+    blogs=models.Blog.objects.all()
+    return render(request,"mainpage.html",{"parablogs":blogs})
+2、页面进行循环方式显示 mainpage.html
+{% for blog in parablogs %}
+   <a href=""> {{ blog.title }}</a>
+    <br>
+{% endfor %}
+二：博客详情页（title,content）：根据参数，显示指定的记录
+1、在应用下的urls.py中
+  url(r'^getblog/(?P<blog_id>[0-9]+)$', views.getBlogDetail),
+2、在views.py
+def getBlogDetail(request,blog_id):
+    blog=models.Blog.objects.get(id=blog_id)
+    return render(request,"blogdetail.html",{"parablog":blog})
+
+3、页面显示blogdetail.html
+<body>
+{{ parablog.title }}
+<br>
+{{ parablog.content }}
+三、把列表页和详情页链接起来
+
+ url(r'^getblog/(?P<blog_id>[0-9]+)$', views.getBlogDetail,name='bid'),
+
+mainpage.html
+  <a href="{% url "bid" blog.id %}"> {{ blog.title }}</a>
+四、新建一条博客记录：一个页面，两个路由（打开页面，submit），两个函数
+打开页面
+def getInserPage(request):
+    return render(request,"insertblog.html")
+
+submit操作
+<form method="post" action="{% url "i_action"  %}">
+————————————————————————
+def submit_action(request):
+    # title=request.POST['title']
+    t=request.POST.get('title','')
+    c=request.POST.get('content','Content')
+    # 向数据库添加记录
+    blog=models.Blog.objects.create(title=t,content=c)
+    # return HttpResponse("添加成功了")
+
+    return render(request, "blogdetail.html", {"parablog": blog})
+
+思考：
+
+
+增加删除，修改的功能
+   models.Blog.objects.filter(title=id).delete()
+    models.Blog.objects.filter(event_id = eid,phone = phone).update(sign = '1')
+
+
+
+
