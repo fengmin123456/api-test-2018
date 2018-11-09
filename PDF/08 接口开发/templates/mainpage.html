@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>blog列表</title>
+</head>
+<body>
+<h1>博客的列表</h1>
+{% for blog in parablogs %}
+   <a href="{% url "bid" blog.id %}"> {{ blog.title }}</a>
+
+    <br>
+{% endfor %}
+<a href="{% url "edit_page" "0" %}">新建blog</a>
+</body>
+</html>

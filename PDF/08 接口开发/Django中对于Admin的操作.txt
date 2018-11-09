@@ -10,7 +10,7 @@ class  Blog(models.Model):
 3.在应用下的admin.py进行models的注册
 admin.site.register(models.Blog)
 4、http://127.0.0.1:8000/admin 就能看到创建的表
-5、希望看到其余的列
+5、希望看到其余的列admin.py
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title','content','pubTime')#页面显示指定的列
     list_filter = ['title']#页面实现过滤的作用
